@@ -1,0 +1,209 @@
+#marqueeTag{
+    position: fixed;
+    bottom: 25px;
+    font-size: 20px;
+    z-index: 100;
+    /* color: red; */
+}
+/* animation: skdStep1 18s ease-in-out infinite; */
+@keyframes skdStep1 {
+    0% {
+        border-radius: 30% 70% 50% 30% / 30% 30% 50% 70%;
+        background: #def2f1;
+        box-shadow :35px 20px 25px -10px rgba(0,0,0,0.2);
+    }
+    25% { 
+        border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+        background: rgb(223, 223, 156);
+    }
+    50% {
+        border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+        background: rgb(211, 179, 179);
+        box-shadow :35px 20px 25px -10px rgba(0,0,0,0.2);
+    }
+    75% {
+        border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+        background: rgb(219, 187, 219);		
+    }
+    100%{
+        border-radius: 30% 70% 50% 30% / 30% 30% 50% 70%;
+        background: #def2f1;
+        box-shadow :35px 20px 25px -10px rgba(0,0,0,0.2);
+    }
+}
+
+.navbar,  .designAnim{
+    animation: myAnim1 4s linear infinite alternate;
+}
+
+@keyframes myAnim1 {
+    0%{box-shadow: 0 0 20px darkblue;}
+    25%{box-shadow: 0 0 20px darkturquoise;}
+    50%{box-shadow: 0 0 20px darkcyan;}
+    100%{box-shadow: 0 0 20px darkmagenta;}
+}
+
+.scet{
+    font-family: 'Secular One', sans-serif;
+    font-size: 45px;
+}
+.updates{
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 60px;
+    color: darkgreen;
+    animation: updatesAnim 3s ease-in-out infinite alternate;
+}
+.text2020{
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 60px;
+    color: darkblue;
+    animation: text2020Anim 3s ease-in-out infinite alternate;
+}
+@keyframes updatesAnim {
+    0% {color: darkgreen;}
+    50% {color: darkgoldenrod;}
+    100%{color: darkkhaki;}
+}
+@keyframes text2020Anim {
+    0% {color: darkblue;}
+    50% {color: darkorange;}
+    100%{color: darkred;}
+}
+
+p,a{
+    font-family: 'Pangolin', cursive;
+    font-size: 20px;
+    /* letter-spacing: 2px; */
+}
+.aboutEvent ul li{
+    font-family: 'Pangolin', cursive;
+    font-size: 20px;
+    list-style-type: square;
+    text-decoration: none;
+}
+.aboutEvent ,.instructions{
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 50px black;
+    text-align: justify;
+}
+.aboutEvent:hover{
+    box-shadow: 0 0 50px green;
+}
+.head1{
+    font-family: 'Frijole', cursive;
+    color: #d65a31;
+    transition: all 0.3s ease-in-out;
+}
+.aboutEvent:hover .head1{
+    text-decoration: dotted underline green;
+    transform: scale(1.05);
+    color: green;
+}
+.instructions:hover{
+    box-shadow: 0 0 50px green;
+}
+.instructions:hover .head1{
+    text-decoration: dotted underline green;
+    transform: scale(1.05);
+    color: green;
+}
+.navbar{
+    border-radius: 30px;
+    background-color: darkred;
+}
+.navbar-brand, .nav-item{
+    transition: all .1s ease-in-out;
+    color: white;
+}
+.navbar-brand:hover, .nav-item:hover{
+    color: white;
+    transform: scale(1.05);
+}
+.navbar-toggler{
+    color: blue;
+    background-color: yellow;
+}
+#userImage{
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 15px black;
+    border-radius: 30px;
+}
+#userImage:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 25px black;
+}
+
+#topSvg{
+    position: relative;
+    top: 0;
+    fill: #d65a31;
+    animation: svgAnim 3s ease-in-out infinite alternate;
+}
+#bottomSvg{
+    position: fixed;
+    bottom: 0;
+    z-index: -99;
+    fill: #d65a31;
+    animation: svgAnim 3s ease-in-out infinite alternate;
+}
+@keyframes svgAnim {
+    0% {fill: darkcyan}
+    50% {fill: darkgoldenrod}
+    100%{fill: darkred}
+}
+/* #QandA{ */
+    
+    /* margin-left: 15vw;
+    margin-right: 15vw;
+    padding: 5vw; */
+/* } */
+.btn-info{
+    width: 20rem;
+    background-color: darkgoldenrod;
+    text-align: justify;
+}
+#QandA{
+    /* box-shadow: 0 0 25px black; */
+    margin-top: -15vh;
+    z-index: 99;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    animation: QandAAnim 1.5s ease-in-out infinite alternate;
+}
+#ques{
+    margin-top: 10px;
+}
+@keyframes QandAAnim {
+    0% {box-shadow: 0 0 25px black;}
+    50% {box-shadow: 0 0 75px black;}
+    100%{box-shadow: 0 0 25px black;}
+}
+@media (max-width: 768px){
+    #ques{
+        animation: QandAAnim 1.5s ease-in-out infinite alternate;
+        padding: 5vw;
+    }
+    #QandA{
+        animation: none;
+        margin-top: -30px;
+    }
+    .navbar-brand{
+        display: block;
+    }
+    .scet{
+        font-size: 35px;
+    }
+    .updates{
+        font-size: 40px;
+    }
+    .text2020{
+        font-size: 40px;
+    }
+    .head1{
+        font-size: 9vw;
+    }
+    .coordinators .row{
+        margin-left: 0.000001px;
+        margin-right: 0.000001px;
+    }
+}

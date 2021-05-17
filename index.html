@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="theme-color" content="#8B0000"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Watch Craft - Updates2020</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Secular+One&family=Frijole&family=Pangolin&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./my.css">
+    
+    <style>
+        *{
+            scroll-behavior: smooth;
+        }
+        .navbar-brand, #userInfoIndex, #BtnLogin, #BtnLogout, #completedR1, #userInfoIndex{
+            display: none;
+        }
+        #r1Btn{
+            display: none;
+        }
+    </style>
+
+    <script type = "text/javascript" > 
+        function preventBack() { window.history.forward(); }  
+        setTimeout("preventBack()", 0);  
+        window.onunload = function () { null };  
+    </script> 
+
+</head>
+<body>
+
+    <style>
+        .design1{
+            position: absolute;
+            z-index: -9;
+            width: 200px;
+            height: 200px;
+            background-color: darkcyan;
+            border-top-right-radius: 100px;
+            border-bottom-right-radius: 100px;
+            /* border-radius: 200px; */
+            margin-left: -10px;
+            margin-top: -20px;
+            /* transform: rotate(50deg); */
+        }
+        .design4{
+            position: absolute;
+            z-index: -9;
+            width: 150px;
+            height: 200px;
+            background-color: darkgoldenrod;
+            border-top-left-radius: 100px;
+            border-bottom-left-radius: 100px;
+            margin-top: -130px;
+            right: 0;
+            /* transform: rotate(-50deg); */
+        }
+        .design2{
+            position: absolute;
+            z-index: -9;
+            width: 150px;
+            height: 200px;
+            background-color: darksalmon;
+            border-top-left-radius: 100px;
+            border-bottom-left-radius: 100px;
+            margin-top: 1000px;
+            right: 0;
+        }
+        .design3{
+            position: absolute;
+            z-index: -9;
+            width: 150px;
+            height: 200px;
+            background-color: darkkhaki;
+            border-top-right-radius: 100px;
+            border-bottom-right-radius: 100px;
+            /* border-radius: 200px; */
+            /* margin-left: -170px; */
+            margin-top: 1450px;   
+        }
+        #SkdTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border-radius:50% ;
+            outline: none;
+            background-color: rgb(180, 123, 123);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            /* border-radius: 4px; */
+            }
+        #SkdTopBtn:hover {
+            background-color: rgb(59, 25, 25);
+            color: white;
+            border-color: whitesmoke;
+        }
+    </style>
+    <div class="design1 designAnim"></div>
+    <div class="design4 designAnim"></div>
+    <div class="design2 designAnim"></div>
+    <div class="design3 designAnim"></div>
+
+    <button onclick="SkdTopFunction()" id="SkdTopBtn" title="Top">Top</button>
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center scet" data-aos="fade-up">Sarvajanik College of Engineering and Technology</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center" data-aos="fade-up">Computer Engineering Department Presents</h3>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <h2 class="text-center updates" data-aos="flip-left">Updates<span class="text2020">2020</span></h2>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top mt-5 ml-4 mr-4">
+        <!-- <a class="navbar-brand ml-2" href="#">The Watch Craft</a> -->
+        <div class="navbar-nav">
+            <a class="nav-item nav-link ml-2" href="">The Watch Craft</a>
+        </div>  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon p-1" style="color: darkred;">+</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto"></ul>
+            <form class="form-inline my-2 my-lg-0">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="./index.html">Home</a>
+                    <a class="nav-item nav-link" href="#" id="BtnLogin" onclick="userLogin();">Login</a>
+                    <a class="nav-item nav-link" href="#" id="BtnLogout" onclick="userLogout();">logout</a>
+                    <a class="nav-item nav-link" href="#IDAboutEvent">About</a>
+                    <a class="nav-item nav-link" href="#IDInstructions">Instructions</a>
+                    <a class="nav-item nav-link" href="#IDCoordinators">Contact</a>
+                </div>  
+            </form>
+        </div>
+    </nav>
+    
+    <marquee id="marqueeTag" behavior="alternate">Please login to complete Round.</marquee>
+
+    <div id="spinnerIndex" class="text-center mt-5">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+
+    <div class="container mt-5">
+        <h1 class="text-center head1" data-aos="fade-up">The Watch Craft</h1>
+    </div>
+
+    <div class="container mt-5 mb-5" id="userInfoIndex">
+        <div class="row text-center">
+            <div class="col pl-5 pr-5">
+                <img src="" id="userImage" width="100px" alt="">
+                <p class="mt-3" id="welcomeUser"></p>
+                <p id="currentEmail"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5" data-aos="fade-up">
+        <div class="row">
+            <img src="https://updates2020.in/assets/images/watchcraft.png" width="100%" alt="">
+            <!-- <img src="./phto.jpg" width="100%" alt=""> -->
+        </div>
+    </div>
+
+    <div class="container mt-5 aboutEvent" id="IDAboutEvent">
+        <h1 class="text-center head1 pt-5" data-aos="fade-up">About The Event</h1>
+        <div class="row">
+            <div class="col-sm-12 p-5" data-aos="fade-up">
+                <!-- <p>The Event is Non-Technical and the Event is on Streaming Movies and TV-Series (Binge
+                    Watching). We will have questions based on Popular Movies & TV-Series such as Dialogues,
+                    Characters, Intro, Music, Casts, etc.We will have 3 Rounds and after the progression of each
+                    round the number of participants is reduced to half and the three fastest performers in
+                    Round 3 will be declared as a Winners. The users will be provided with a web-interface to
+                    complete in the event and various techniques like a head-to-head, fastest finger etc can be
+                    used in each round. </p>                -->
+                    <ul>
+                        <li>Non-Technical Event</li>
+                        <li>Questions are based on Popular Movies & TV-Series such as Dialogues, Characters, Intro, Music, Casts, etc.</li>
+                        <li>Three fastest performers in Round 3 will be declared as a Winners.</li>
+                        <li>The users will be provided with a web-interface to complete the event and various techniques like head-to-head, fastest finger, etc can be used in each round.</li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 instructions" id="IDInstructions">
+        <h1 class="text-center head1 pt-5" data-aos="fade-up">Instructions</h1>
+        <div class="row">
+            <div class="col-sm-12 p-5" data-aos="fade-up">
+                <p><b>Participation Mode : </b>Single</p>
+                <p><b>Number of Rounds : </b>3</p>
+                <hr>
+                <p><b>Round-1 : </b></p>
+                <p>This round wil be open for all participants from 08:30 AM to 11:00 AM. You can login at any time during this time period only and
+                    answer the quiz question as mention. You will have 20 questions and 3 minutes to complete the quiz once you start (No time limit for each question).
+                    <b>More score and least time will be considered first.</b> 50% participants will go for next round.</p>
+                <div style="color: red;">
+                    <p><b>Only one chance is there to complete the quiz.</b></p>
+                    <p><b>You can not go back once the quiz is started.</b></p>
+                    <p><b>Do not refresh the quiz page, if you will refresh it then new question will be displayed and your score will be counted from 0 but your time will not be resetted.</b></p>
+                </div>
+                
+                <h4 id="completedR1" style="color: green;" class="text-left">You have successfully completed round-1.</h4>
+                <button id="r1Btn" type="button" class="btn btn-success" onclick="rndOneStart()">Attend Round-1</button>
+                
+                <hr>
+                <p><b>Round-2 : </b></p>
+                <p>Please join google meet for instructions. <a href="https://meet.google.com/tgg-ksdy-isz" target="_blank">click here to join</a> </p>
+                <p>This round wil be open for all participants from 12:45 PM to 03:00 PM. You can login during this time and
+                    answer the quiz question as mention. You will be given pictures from Famous Webseries.
+                    You will have 6 mintues to answer as much questions as you can. 30% participants will go for next round.</p>
+                <hr>
+                <p><b>Round-3 : </b></p>
+                <p>This round wil be open for all participants from 04:00 PM to 05:00 PM. You can login during this time and
+                    answer the quiz question as mention. You will be given short clips from Famous Webseries.
+                    You will have 15 questions and 5 minutes to answer all. Top 3 perfomers based on max. score and min. time will be declared as winners.</p>
+                
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .m1{
+            background-color: darkcyan;
+            border-top-right-radius: 50px;
+            border-bottom-left-radius: 50px;
+            margin-top: 20px;
+            width: 50%;
+            transition: all 0.3s ease-in-out;
+        }
+        .m1:hover{
+            transform: scale(1.05);
+            box-shadow: 0 0 25px black;
+        } 
+        .m1 a{
+            color: white;
+            list-style-type: none;
+        }
+    </style>
+    <div class="container mt-5 mb-5 coordinators" id="IDCoordinators" data-aos="fade-up">
+        <h1 class="text-center head1">Student Coordinators</h1>
+        <div class="row text-center">
+            <div class="col-md-3 col-sm-12 col-lg-3 p-2 m1">
+                Keyur Vdodariya <br> <a href="tel:9999999999">(8140928632)</a>
+            </div>
+            <div class="col-md-3 col-sm-12 col-lg-3 p-2 m1">
+                Prashant Godhani <br> <a href="tel:9999999999">(9898533479)</a>
+            </div>
+            <div class="col-md-3 col-sm-12 col-lg-3 p-2 m1">
+                Nikhil Maguwala <br> <a href="tel:9999999999">(9374001310)</a>
+            </div>
+            <div class="col-md-3 col-sm-12 col-lg-3 p-2 m1">
+                Smit Dhameliya <br> <a href="tel:9999999999">(7778800878)</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="darkred" fill-opacity="1" d="M0,160L48,149.3C96,139,192,117,288,122.7C384,128,480,160,576,154.7C672,149,768,107,864,96C960,85,1056,107,1152,117.3C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+<!-- fire st -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-database.js"></script> -->
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyDGGeeJzIz-lsW5rty6nPu4IhA9dsyv104",
+          authDomain: "thewatchcraft2020.firebaseapp.com",
+          databaseURL: "https://thewatchcraft2020.firebaseio.com",
+          projectId: "thewatchcraft2020",
+          storageBucket: "thewatchcraft2020.appspot.com",
+          messagingSenderId: "1054481530150",
+          appId: "1:1054481530150:web:a3aa2fed5389424b9a95e7",
+          measurementId: "G-K1F5P51KBJ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+      </script>
+<!-- fire end -->
+
+<script src="./auth.js"></script>
+
+    <script>
+        var button = document.getElementById("SkdTopBtn");
+        window.onscroll = function() {skdScrollFunction()};
+        function skdScrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+            button.style.display = "block";
+            } else {
+            button.style.display = "none";
+            }
+        }
+        function SkdTopFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>
